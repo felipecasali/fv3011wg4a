@@ -152,6 +152,38 @@ figcaption span{color:var(--muted);font-style:italic}
 @keyframes dots{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}}
 .counter{margin-top:14px;color:var(--faint)}
 
+/* reclame aqui */
+.ra{border:1px solid var(--line);background:var(--bg2);padding:clamp(22px,4vw,40px);position:relative;margin-top:10px}
+.ra .meta{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-bottom:18px}
+.badge{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border:1px solid #c0392b;color:#ff8a7a;background:rgba(192,57,43,.12)}
+.ra h3{font-weight:600;font-size:clamp(1.4rem,3vw,2rem);line-height:1.15;margin-bottom:22px}
+.ra blockquote{border-left:3px solid var(--rust);padding:4px 0 4px 20px;font-size:1.15rem;font-style:italic;color:var(--paper)}
+.ra blockquote p+p{margin-top:.8em}
+.ra .foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;margin-top:26px}
+.ra .wait{color:var(--muted);font-style:italic}
+.ra .wait b{color:var(--rust3);font-style:normal;font-family:var(--mono);font-weight:500}
+.lnk{font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);border:1px solid var(--faint);padding:12px 18px;text-decoration:none;transition:.2s}
+.lnk:hover{border-color:var(--rust);color:var(--rust3)}
+
+/* depoimentos */
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin:10px 0 50px}
+.dep{border:1px solid var(--line);background:var(--bg2);padding:22px;display:flex;flex-direction:column;gap:12px;animation:in .6s ease both}
+.dep .who{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.dep .prod{color:var(--rust3);font-weight:600}
+.dep p{white-space:pre-wrap;font-size:1.02rem}
+.empty{border:1px dashed var(--faint);padding:30px;text-align:center;color:var(--muted);font-style:italic;grid-column:1/-1}
+.depform{border:1px solid var(--line);background:#0b0907;padding:clamp(22px,4vw,40px)}
+.depform .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.depform input[type=text],.depform textarea{width:100%;background:var(--bg2);border:1px solid var(--line);color:var(--paper);font:inherit;font-size:1rem;padding:12px 14px;border-radius:2px}
+.depform textarea{min-height:140px;resize:vertical}
+.depform .row{display:grid;gap:8px;margin-bottom:18px}
+.depform .chk{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:.95rem;margin-bottom:20px}
+.depform .chk input{margin-top:5px;accent-color:var(--rust)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fmsg{margin-top:16px;font-family:var(--mono);font-size:.8rem}
+.fmsg.ok{color:#8fd19e}.fmsg.err{color:#ff8a7a}
+@media (max-width:720px){.depform .grid{grid-template-columns:1fr}}
+
 /* ficha */
 .spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));border-top:1px solid var(--line);margin-top:10px}
 .spec div{padding:18px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;padding-right:20px}
@@ -277,9 +309,38 @@ footer p{max-width:720px;margin:0 auto .6em}
       <div class="ev"><p class="mono">Meses 1–5</p><h3>Lava roupa</h3><p>Exatamente aquilo para o que foi fabricada. Ou assim pensávamos.</p></div>
       <div class="ev"><p class="mono">Mês 6</p><h3>A ferrugem se apresenta</h3><p>Na travessa frontal, na base, no piso. Não é uma manchinha: é a estrutura indo embora.</p></div>
       <div class="ev"><p class="mono">Ainda no mês 6</p><h3>Aciona-se a garantia</h3><p>Afinal, é para isso que ela existe. Certo?</p></div>
-      <div class="ev"><p class="mono">Resposta do fabricante</p><h3>“Mau uso.”</h3><p>Atendimento em garantia recusado. Caso encerrado, segundo eles.</p></div>
+      <div class="ev"><p class="mono">Resposta do fabricante</p><h3>“Mau uso.”</h3><p>A assistência técnica recusou a garantia e avisou que o reparo será cobrado. Caso encerrado, segundo eles.</p></div>
+      <div class="ev"><p class="mono">04/11/2026</p><h3>Reclamação registrada no Reclame Aqui</h3><p>Pública, com nome, modelo e fotos. Aguardando a LG se manifestar.</p></div>
       <div class="ev final"><p class="mono">Hoje</p><h3>Este memorial</h3><p>Se a máquina não dura, que pelo menos a história fique.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- RECLAME AQUI -->
+<section class="sec" style="padding-top:0">
+  <div class="narrow">
+    <div class="rv">
+      <p class="mono">Registro público · Reclame Aqui</p>
+      <h2>O boletim de ocorrência.</h2>
+    </div>
+    <article class="ra rv">
+      <div class="meta">
+        <span class="badge">Não respondida</span>
+        <span class="mono">ID 263393287</span>
+        <span class="mono">São Paulo – SP</span>
+        <span class="mono">04/11/2026 · 16:57</span>
+      </div>
+      <h3>Minha máquina de lavar LG está enferrujada e a assistência quer me cobrar</h3>
+      <blockquote>
+        <p>Máquina de lavar FV3011WG4A com sinais extremos de corrosão na carcaça, escorrendo ferrugem pelo piso. 6 meses de uso apenas. Assistência técnica acusou mau uso, e haverá cobrança para reparo.</p>
+        <p>Uma completa vergonha e descaso da marca LG com seus clientes. Um produto que foi projetado para lavar roupas, em menos de 6 meses tem peças metálicas que estão simplesmente desmanchando em ferrugem.</p>
+      </blockquote>
+      <div class="foot">
+        <p class="wait">Tempo sem resposta da LG: <b id="semresp">—</b></p>
+        <a class="lnk" href="https://www.reclameaqui.com.br/lg-electronics/reclamacao_ZNKDjEc1AKEgxA3o/" target="_blank" rel="noopener">Ver no Reclame Aqui ↗</a>
+      </div>
+    </article>
+    <p class="mono rv" style="margin-top:14px;text-transform:none;letter-spacing:0;color:var(--faint)">Status registrado na publicação deste site. O andamento atualizado está no link acima.</p>
   </div>
 </section>
 
@@ -344,9 +405,36 @@ footer p{max-width:720px;margin:0 auto .6em}
       <div><span class="mono">Tempo de uso</span><span>6 meses</span></div>
       <div><span class="mono">Causa mortis</span><span class="bad">Corrosão estrutural</span></div>
       <div><span class="mono">Garantia</span><span>Vigente</span></div>
-      <div><span class="mono">Atendimento</span><span class="bad">Recusado</span></div>
+      <div><span class="mono">Atendimento</span><span class="bad">Recusado · reparo cobrado</span></div>
+      <div><span class="mono">Reclame Aqui</span><span class="bad">Não respondida</span></div>
       <div><span class="mono">Justificativa</span><span class="bad">“Mau uso”</span></div>
     </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="sec" id="depoimentos" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <p class="mono">Mural de testemunhos</p>
+      <h2>Ela não está sozinha. Quem mais passou por isso com a LG?</h2>
+      <p style="color:var(--muted);max-width:720px;margin:-18px 0 34px">Este espaço fica no ar para que outros consumidores conheçam histórias reais antes de comprar. Conte a sua.</p>
+    </div>
+    <div class="wall" id="wall"><div class="empty">Carregando relatos…</div></div>
+    <form class="depform rv" id="depform" novalidate>
+      <p class="mono" style="margin-bottom:22px">Deixe seu depoimento</p>
+      <div class="grid">
+        <div class="row"><label class="mono" for="d_nome">Nome ou apelido</label><input type="text" id="d_nome" maxlength="60" required placeholder="Ex.: Ana P."></div>
+        <div class="row"><label class="mono" for="d_cidade">Cidade (opcional)</label><input type="text" id="d_cidade" maxlength="60" placeholder="Ex.: Campinas – SP"></div>
+      </div>
+      <div class="row"><label class="mono" for="d_prod">Produto LG e modelo</label><input type="text" id="d_prod" maxlength="80" required placeholder="Ex.: Lavadora FV3011WG4A, Geladeira GC-B…"></div>
+      <div class="row"><label class="mono" for="d_relato">O que aconteceu</label><textarea id="d_relato" maxlength="1500" required placeholder="Defeito, tempo de uso, como foi o atendimento…"></textarea></div>
+      <div class="hp" aria-hidden="true"><label>Não preencha<input type="text" id="d_site" tabindex="-1" autocomplete="off"></label></div>
+      <label class="chk"><input type="checkbox" id="d_ok" required><span>Este é um relato verdadeiro da minha experiência. Não incluí telefone, CPF, endereço ou dados de outras pessoas.</span></label>
+      <button class="btn" type="submit" id="d_btn">Enviar depoimento</button>
+      <p class="fmsg" id="d_msg" aria-live="polite"></p>
+      <p class="mono" style="margin-top:14px;text-transform:none;letter-spacing:0;color:var(--faint)">Os relatos passam por moderação antes de aparecer no mural.</p>
+    </form>
   </div>
 </section>
 
@@ -366,7 +454,7 @@ footer p{max-width:720px;margin:0 auto .6em}
 </section>
 
 <footer>
-  <p>Relato pessoal de um consumidor. As fotos são reais e mostram a máquina do autor com cerca de 6 meses de uso. O pedido de reparo em garantia foi recusado sob a alegação de mau uso.</p>
+  <p>Relato pessoal de um consumidor. As fotos são reais e mostram a máquina do autor com cerca de 6 meses de uso. O pedido de reparo em garantia foi recusado sob a alegação de mau uso, com cobrança para o conserto. Os depoimentos do mural são de responsabilidade de seus autores e passam por moderação.</p>
   <p>Conteúdo de opinião e humor. Este site não tem qualquer relação com a LG Electronics; LG é marca registrada de seu titular.</p>
 </footer>
 
@@ -449,6 +537,53 @@ footer p{max-width:720px;margin:0 auto .6em}
   const vigil=document.getElementById('vigil'), t0=Date.now();
   setInterval(()=>{const s=Math.floor((Date.now()-t0)/1000);
     vigil.textContent='Você está nesta vigília há '+s+'s. A garantia levou menos que isso para ser negada.';},1000);
+
+  /* tempo sem resposta no Reclame Aqui */
+  const t_ra = new Date('2026-11-04T16:57:00-03:00').getTime(), semresp=document.getElementById('semresp');
+  function fmt(ms){const s=Math.max(0,Math.floor(ms/1000)),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),ss=s%60;
+    return (d?d+'d ':'')+String(h).padStart(2,'0')+'h '+String(m).padStart(2,'0')+'m '+String(ss).padStart(2,'0')+'s';}
+  setInterval(()=>semresp.textContent=fmt(Date.now()-t_ra),1000); semresp.textContent=fmt(Date.now()-t_ra);
+
+  /* depoimentos (Supabase) */
+  const SB='https://rslcevxfjhxardraojra.supabase.co/rest/v1/fv_depoimentos', KEY='sb_publishable_j2dxD9m8Nag-uCEkk498wA_WTh4yJRW';
+  const SBH={apikey:KEY,'Content-Type':'application/json'};
+  const wall=document.getElementById('wall');
+  function card(d){
+    const el=document.createElement('div'); el.className='dep';
+    const who=document.createElement('span'); who.className='who';
+    const dt=new Date(d.created_at).toLocaleDateString('pt-BR');
+    who.textContent=[d.nome,d.cidade,dt].filter(Boolean).join(' · ');
+    const pr=document.createElement('span'); pr.className='prod'; pr.textContent=d.produto;
+    const tx=document.createElement('p'); tx.textContent=d.relato;
+    el.append(pr,tx,who); return el;
+  }
+  async function loadWall(){
+    try{
+      const r=await fetch(SB+'?select=nome,cidade,produto,relato,created_at&aprovado=eq.true&order=created_at.desc&limit=200',{headers:SBH});
+      if(!r.ok) throw 0;
+      const rows=await r.json(); wall.innerHTML='';
+      if(!rows.length){wall.innerHTML='<div class="empty">Nenhum depoimento publicado ainda. O seu pode ser o primeiro.</div>';return;}
+      rows.forEach(d=>wall.append(card(d)));
+    }catch(_){wall.innerHTML='<div class="empty">Não foi possível carregar os relatos agora.</div>';}
+  }
+  loadWall();
+  const f=document.getElementById('depform'), msg=document.getElementById('d_msg'), btn=document.getElementById('d_btn');
+  f.addEventListener('submit',async e=>{
+    e.preventDefault(); msg.className='fmsg'; msg.textContent='';
+    const v=id=>document.getElementById(id).value.trim();
+    if(v('d_site')) return;
+    const body={nome:v('d_nome'),cidade:v('d_cidade')||null,produto:v('d_prod'),relato:v('d_relato')};
+    if(!body.nome||body.produto.length<2){msg.className='fmsg err';msg.textContent='Preencha nome e produto.';return;}
+    if(body.relato.length<30){msg.className='fmsg err';msg.textContent='Conte um pouco mais (mínimo de 30 caracteres).';return;}
+    if(!document.getElementById('d_ok').checked){msg.className='fmsg err';msg.textContent='Confirme que o relato é verdadeiro e sem dados pessoais.';return;}
+    btn.disabled=true; btn.textContent='Enviando…';
+    try{
+      const r=await fetch(SB,{method:'POST',headers:{...SBH,Prefer:'return=minimal'},body:JSON.stringify(body)});
+      if(!r.ok) throw 0;
+      f.reset(); msg.className='fmsg ok'; msg.textContent='Recebido. Seu relato aparece no mural depois da moderação. Obrigado por compartilhar.';
+    }catch(_){msg.className='fmsg err';msg.textContent='Não foi possível enviar agora. Tente de novo em instantes.';}
+    btn.disabled=false; btn.textContent='Enviar depoimento';
+  });
 
   /* compartilhar */
   const url=location.href.split('#')[0], txt='Minha lavadora LG FV3011WG4A enferrujou com 6 meses. Garantia recusada por "mau uso". Descanse em pó:';
