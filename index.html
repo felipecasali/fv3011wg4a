@@ -225,10 +225,26 @@ figcaption span{color:var(--muted);font-style:italic}
 @media (max-width:720px){.depform .grid{grid-template-columns:1fr}}
 
 /* ficha */
-.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));border-top:1px solid var(--line);margin-top:10px}
-.spec div{padding:18px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;padding-right:20px}
-.spec div span:last-child{text-align:right}
-.spec .bad{color:var(--rust3)}
+.reg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:10px}
+.blk{background:var(--bg2);padding:24px 22px 18px;display:flex;flex-direction:column}
+.blk h3{display:flex;align-items:baseline;gap:10px;font-weight:600;font-size:1.25rem;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.blk h3 small{font-family:var(--mono);font-size:.7rem;color:var(--rust3);letter-spacing:.1em}
+.blk dl{display:grid;gap:14px}
+.blk dt{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.blk dd{font-size:1.05rem;line-height:1.35}
+.pill{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border:1px solid}
+.pill.red{color:#ff8a7a;border-color:#a33a2c;background:rgba(192,57,43,.12)}
+.pill.amb{color:#ffc36b;border-color:#8a6420;background:rgba(255,180,60,.08)}
+.pill.ok{color:#9fd8b0;border-color:#3d6b4c;background:rgba(80,160,100,.08)}
+.blk dd a{color:var(--paper);text-decoration-color:var(--faint)}
+.tally{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-top:0}
+.tally>div{padding:22px;border-right:1px solid var(--line)}
+.tally>div:last-child{border-right:0}
+.tally .n{font-weight:900;font-size:clamp(2rem,4vw,2.8rem);line-height:1}
+.tally .n.r{color:var(--rust3)}
+.tally p{color:var(--muted);margin-top:6px;font-size:.95rem}
+@media (max-width:1000px){.reg{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.reg{grid-template-columns:1fr}.tally{grid-template-columns:1fr}.tally>div{border-right:0;border-bottom:1px solid var(--line)}.tally>div:last-child{border-bottom:0}}
 
 /* vela / final */
 .end{text-align:center;padding-bottom:60px;background:radial-gradient(ellipse at 50% 30%,#22150e 0%,var(--bg) 60%)}
@@ -376,6 +392,7 @@ footer p{max-width:720px;margin:0 auto .6em}
       <div class="ev"><p class="mono">Ainda no mês 6</p><h3>Aciona-se a garantia</h3><p>Afinal, é para isso que ela existe. Certo?</p></div>
       <div class="ev"><p class="mono">Resposta do fabricante</p><h3>“Mau uso.”</h3><p>A assistência técnica recusou a garantia e avisou que o reparo será cobrado. Caso encerrado, segundo eles.</p></div>
       <div class="ev"><p class="mono">04/11/2026</p><h3>Reclamação registrada no Reclame Aqui</h3><p>Pública, com o modelo e o defeito descritos. Aguardando a LG se manifestar.</p></div>
+      <div class="ev"><p class="mono">Em seguida</p><h3>Ouvidoria da LG acionada</h3><p>O último degrau antes da Justiça. Sem resposta até agora.</p></div>
       <div class="ev final"><p class="mono">Hoje</p><h3>Este memorial</h3><p>Se a máquina não dura, que pelo menos a história fique.</p></div>
     </div>
   </div>
@@ -463,17 +480,38 @@ footer p{max-width:720px;margin:0 auto .6em}
       <p class="mono">Ficha técnica do óbito</p>
       <h2>Para fins de registro.</h2>
     </div>
-    <div class="spec rv">
-      <div><span class="mono">Modelo</span><span>FV3011WG4A</span></div>
-      <div><span class="mono">Fabricante</span><span>LG</span></div>
-      <div><span class="mono">Tipo</span><span>Lavadora</span></div>
-      <div><span class="mono">Tempo de uso</span><span>6 meses</span></div>
-      <div><span class="mono">Causa mortis</span><span class="bad">Corrosão estrutural</span></div>
-      <div><span class="mono">Garantia</span><span>Vigente</span></div>
-      <div><span class="mono">Atendimento</span><span class="bad">Recusado · reparo cobrado</span></div>
-      <div><span class="mono">Reclame Aqui</span><span class="bad">Não respondida</span></div>
-      <div><span class="mono">Justificativa</span><span class="bad">“Mau uso”</span></div>
+    <div class="reg rv">
+      <div class="blk"><h3><small>01</small>Produto</h3><dl>
+        <div><dt>Modelo</dt><dd>FV3011WG4A</dd></div>
+        <div><dt>Fabricante</dt><dd>LG</dd></div>
+        <div><dt>Tipo</dt><dd>Lavadora, 11 kg</dd></div>
+        <div><dt>Tecnologia anunciada</dt><dd>Inteligência Artificial AIDD™</dd></div>
+      </dl></div>
+      <div class="blk"><h3><small>02</small>Ocorrência</h3><dl>
+        <div><dt>Tempo de uso</dt><dd>6 meses</dd></div>
+        <div><dt>Causa mortis</dt><dd>Corrosão estrutural</dd></div>
+        <div><dt>Partes afetadas</dt><dd>Travessa frontal e base da carcaça</dd></div>
+        <div><dt>Sintoma</dt><dd>Ferrugem escorrendo para o piso</dd></div>
+      </dl></div>
+      <div class="blk"><h3><small>03</small>Garantia</h3><dl>
+        <div><dt>Situação</dt><dd><span class="pill ok">Vigente</span></dd></div>
+        <div><dt>Atendimento</dt><dd><span class="pill red">Recusado</span></dd></div>
+        <div><dt>Justificativa</dt><dd>“Mau uso”</dd></div>
+        <div><dt>Reparo</dt><dd>Cobrado do consumidor</dd></div>
+      </dl></div>
+      <div class="blk"><h3><small>04</small>Reclamações</h3><dl>
+        <div><dt>Reclame Aqui · ID 263393287</dt><dd><span class="pill red">Não respondida</span></dd></div>
+        <div><dt>Ouvidoria LG</dt><dd><span class="pill red">Sem resposta</span></dd></div>
+        <div><dt>Aberta no Reclame Aqui em</dt><dd>04/11/2026</dd></div>
+        <div><dt>Acompanhar</dt><dd><a href="https://www.reclameaqui.com.br/lg-electronics/reclamacao_ZNKDjEc1AKEgxA3o/" target="_blank" rel="noopener">Reclame Aqui ↗</a></dd></div>
+      </dl></div>
     </div>
+    <div class="tally rv">
+      <div><div class="n">3</div><p>canais acionados: assistência técnica, Reclame Aqui e Ouvidoria</p></div>
+      <div><div class="n r">1</div><p>resposta recebida, da assistência: “mau uso”</p></div>
+      <div><div class="n r">0</div><p>soluções oferecidas sem custo, dentro da garantia</p></div>
+    </div>
+  </div>
   </div>
 </section>
 
